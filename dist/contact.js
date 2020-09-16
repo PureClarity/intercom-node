@@ -15,7 +15,9 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Contact = /*#__PURE__*/function () {
+var Contact =
+/*#__PURE__*/
+function () {
   function Contact(client) {
     _classCallCheck(this, Contact);
 
@@ -79,6 +81,11 @@ var Contact = /*#__PURE__*/function () {
       return this.client.post("/contacts/".concat(params.userId, "/companies"), {
         id: params.companyId
       }, f);
+    }
+  }, {
+    key: "search",
+    value: function search(params, f) {
+      return this.client.post('/contacts/search', params, f);
     }
   }]);
 
